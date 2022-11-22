@@ -1,0 +1,7 @@
+dvc
+pandas
+notebook
+numpy
+matplotlib
+seaborn
+-e .   # install the local package src
