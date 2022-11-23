@@ -4,6 +4,7 @@ notebook
 numpy
 matplotlib
 seaborn
+ruptures
 -e .   # install the local package src
 
 # Dev requirements
