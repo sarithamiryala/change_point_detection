@@ -1,13 +1,20 @@
 base:
-  project:change_point_detection
-  random_state=42
-  target_col:TARGET
+  project: change_point_detection
+  target_col: TARGET
 
 data_source:
-  s3_source: data_given\sales.csv
-
-load_data:
-  raw_dataset_csv: data\raw\sales.csv
+  n_samples: 1000
+  n_dim: 3
+  sigma : 2
+  n_bkps : 4
+  
 
 detection:
-  
+  model: 'rbf'
+  pen: 2
+
+
+
+
+
+

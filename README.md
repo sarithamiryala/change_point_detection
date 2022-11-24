@@ -31,3 +31,23 @@ git commit -m "message" ... to send changes/version to github ...
 git push origin main ...
 
 to check remote url ... git remote -v ...
+
+tox command-
+'''bash
+tox
+'''
+for rebuilding-
+'''
+pytest command
+''' bash
+pytest -v 
+
+setup commands-
+pip install -e .
+
+
+build your own package commands-
+'''
+python setup.py sdist bdist wheel
+'''
+
