@@ -26,10 +26,13 @@ stages:
     - path: src/get_data.py
       md5: 12f0fe059e69b897d0cbbcc1e74a7b82
       size: 957
+    - path: src/show.py
+      md5: 8f5ef66ee1bbf70d7ac62c88e508e796
+      size: 569
     outs:
     - path: reports/breakpoints.json
-      md5: ee7cb2ddede84110dbe8686ac728da47
+      md5: 8558767a271ec14ca339b73a05ce98fe
       size: 102
     - path: reports/metrics.json
-      md5: 6550634d45a6d7d375cc996bf22edcb6
-      size: 109
+      md5: f3932ca635bbf6ad945b75bb66fbac2b
+      size: 107

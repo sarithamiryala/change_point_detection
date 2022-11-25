@@ -12,7 +12,7 @@ def detection(config_path):
     signal,bkps = generate_signal(config_path)
     model1 = config['detection']['model']
     algo = rpt.Dynp(model = model1).fit(signal)
-    result = algo.predict(n_bkps=4)
+    result = algo.predict(n_bkps = 4)
     print(f'detected break points are {result}')
 
     breakpoints_file = config["reports"]["breakpoints"]

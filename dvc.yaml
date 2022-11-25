@@ -11,11 +11,14 @@ stages:
     deps:
     - src/get_data.py
     - src/detection.py
+    - src/show.py
     metrics:
     - reports/breakpoints.json:
         cache: false
     - reports/metrics.json:
         cache: False
+    
+    
     
   
     

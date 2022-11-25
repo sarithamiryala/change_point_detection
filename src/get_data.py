@@ -21,7 +21,7 @@ def generate_signal(config_path):
     #number of breakpoints
     n_bkps = config["data_source"]["n_bkps"]
     signal,bkps = rpt.pw_constant(n_samples,n_dim,n_bkps,noise_std = sigma)
-    print(f'breakpoints in the signal are {bkps}')
+    #print(f'breakpoints in the signal are {bkps}')
     return signal,bkps
 
 
