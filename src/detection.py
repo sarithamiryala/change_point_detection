@@ -2,15 +2,17 @@
 # save it in results
 import os
 import argparse
-from get_data import generate_signal
+from get_data import generate_signal,read_params
 import ruptures as rpt
 
 
-def detection():
-    signal,bkps = generate_signal()
-    algo = rpt.Dynp(model = 'l2').fit(signal)
+def detection(config_path):
+    config = read_params(config_path)
+    signal,bkps = generate_signal(config_path)
+    model1 = config['detection']['model']
+    algo = rpt.Dynp(model = model1).fit(signal)
     result = algo.predict(n_bkps=4)
-    ##print(result)
+    print(f'detected break points are {result}')
     return result
 
     
@@ -21,4 +23,4 @@ if __name__=="__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default="params.yaml")
     parsed_args = args.parse_args()
-    detection()
+    detection(config_path = parsed_args.config)

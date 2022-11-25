@@ -6,10 +6,7 @@ logging.basicConfig(
     format = "[%(asctime)s: %(levelname)s]: %(message)s: "
 )
 
-while True:
-    project_name =  input("Enter the Project Name : ")
-    if project_name!= '':
-        break
+project_name = "changepointdetection"
 
 logging.info(f'Creating project by name: {project_name}')
 

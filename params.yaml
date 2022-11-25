@@ -1,17 +1,19 @@
 base:
   project: change_point_detection
-  target_col: TARGET
+  #target_col: TARGET
 
 data_source:
   n_samples: 1000
   n_dim: 3
-  sigma : 2
+  sigma : 1
   n_bkps : 4
   
 
 detection:
-  model: 'rbf'
+  model: 'l1'
   pen: 2
+  
+
 
 
 
