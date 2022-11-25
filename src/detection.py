@@ -4,6 +4,7 @@ import os
 import argparse
 from get_data import generate_signal,read_params
 import ruptures as rpt
+import json
 
 
 def detection(config_path):
@@ -13,11 +14,18 @@ def detection(config_path):
     algo = rpt.Dynp(model = model1).fit(signal)
     result = algo.predict(n_bkps=4)
     print(f'detected break points are {result}')
+
+    breakpoints_file = config["reports"]["breakpoints"]
+
+    with open(breakpoints_file,'w') as f:
+        breakpoints = {
+            "breakpoint":result
+        }
+        json.dump(breakpoints,f,indent= 4)
+
     return result
 
     
-
-   
 
 if __name__=="__main__":
     args = argparse.ArgumentParser()

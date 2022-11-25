@@ -17,3 +17,19 @@ stages:
     - path: src/get_data.py
       md5: 12f0fe059e69b897d0cbbcc1e74a7b82
       size: 957
+  evaluation:
+    cmd: python src/metrics.py --config=params.yaml
+    deps:
+    - path: src/detection.py
+      md5: a9576168e9199f4e14bc72d87394f705
+      size: 921
+    - path: src/get_data.py
+      md5: 12f0fe059e69b897d0cbbcc1e74a7b82
+      size: 957
+    outs:
+    - path: reports/breakpoints.json
+      md5: ee7cb2ddede84110dbe8686ac728da47
+      size: 102
+    - path: reports/metrics.json
+      md5: 6550634d45a6d7d375cc996bf22edcb6
+      size: 109

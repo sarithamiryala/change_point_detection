@@ -6,11 +6,16 @@ stages:
     cmd: python src/detection.py  --config=params.yaml
     deps:
     - src/get_data.py
-  metrics:
+  evaluation:
     cmd: python src/metrics.py --config=params.yaml
     deps:
-     - src/get_data.py
-     - src/detection.py
+    - src/get_data.py
+    - src/detection.py
+    metrics:
+    - reports/breakpoints.json:
+        cache: false
+    - reports/metrics.json:
+        cache: False
     
   
     

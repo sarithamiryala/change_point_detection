@@ -4,6 +4,7 @@ from ruptures.metrics import randindex
 from get_data import generate_signal,read_params
 from detection import detection
 import argparse
+import json
 
 
 
@@ -12,10 +13,23 @@ def evaluation_metrices(config_path):
     signal,bkps1 = generate_signal(config_path)
     bkps2 = detection(config_path)
     eval_metrics = hausdorff(bkps1,bkps2)
+    rand_index = randindex(bkps1,bkps2)
     print(f'housdorff is {eval_metrics}')
-    print(f'rand_index is{randindex(bkps1,bkps2)}')
+    print(f'rand_index is{rand_index}')
     p,r = precision_recall(bkps1, bkps2)
     print(f'precision is {p} and recall is {r}')
+
+    metrics_file = config["reports"]["metrics"]
+
+    with open(metrics_file,'w') as f:
+        metrics = {
+            "precision":p,
+            "recall" : r,
+            "housdorff": eval_metrics,
+            "randinex": rand_index
+         }
+        json.dump(metrics,f,indent= 4)
+
     return eval_metrics
 
 if __name__=="__main__":

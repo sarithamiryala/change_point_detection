@@ -12,7 +12,10 @@ data_source:
 detection:
   model: 'l1'
   pen: 2
-  
+
+reports:
+  breakpoints: reports/breakpoints.json
+  metrics: reports/metrics.json
 
 
 
