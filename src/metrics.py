@@ -7,7 +7,6 @@ import argparse
 
 
 
-
 def evaluation_metrices(config_path):
     config = read_params(config_path)
     signal,bkps1 = generate_signal(config_path)

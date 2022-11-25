@@ -2,3 +2,18 @@ schema: '2.0'
 stages:
   get_data:
     cmd: python src/get_data.py  --config=params.yaml
+  detection:
+    cmd: python src/detection.py  --config=params.yaml
+    deps:
+    - path: src/get_data.py
+      md5: 12f0fe059e69b897d0cbbcc1e74a7b82
+      size: 957
+  metrics:
+    cmd: python src/metrics.py --config=params.yaml
+    deps:
+    - path: src/detection.py
+      md5: 6e445415d205834a64eb7c5ea9476bea
+      size: 696
+    - path: src/get_data.py
+      md5: 12f0fe059e69b897d0cbbcc1e74a7b82
+      size: 957

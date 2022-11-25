@@ -1,7 +1,16 @@
 stages:
   get_data:
     cmd: python src/get_data.py  --config=params.yaml
-    
+  
+  detection:
+    cmd: python src/detection.py  --config=params.yaml
+    deps:
+    - src/get_data.py
+  metrics:
+    cmd: python src/metrics.py --config=params.yaml
+    deps:
+     - src/get_data.py
+     - src/detection.py
     
   
     
